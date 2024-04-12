@@ -1,4 +1,5 @@
 import { Footer } from "./Footer.component";
 import { Header } from "./Header.component";
+import { CustomerTableRow } from "./CustomerTableRow";
 
-export { Footer, Header };
+export { Footer, Header, CustomerTableRow };

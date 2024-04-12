@@ -26,6 +26,7 @@ export function HomePage() {
       <Header />
       <div>
         <h1>Quantum Com</h1>
+        <a className="btn-btn-primary btn-lg" href="/customers">View Customers</a>
       </div>
       <Footer />
     </>

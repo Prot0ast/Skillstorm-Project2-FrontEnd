@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import "./App.css";
 import { CustomerDetails } from "./pages/CustomerDetails";
+import { Customers } from "./pages/Customers";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/customer/:customerId" element={<CustomerDetails />} />
+          <Route path="/customers" element={<Customers />}/>
+          <Route path="/customers/:customerId" element={<CustomerDetails />} />
         </Routes>
       </BrowserRouter>
     </ThemeContext.Provider>
