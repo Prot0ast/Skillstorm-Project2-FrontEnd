@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React from "react";
 import { useParams } from "react-router-dom";
 import { getCustomerById } from "../services/customerService";
@@ -8,6 +9,7 @@ export function CustomerDetails() {
     fullName: "",
     email: "",
   });
+
   const { customerId } = useParams();
 
   React.useEffect(() => {
@@ -17,8 +19,7 @@ export function CustomerDetails() {
     getCustomerById(customerId).then((response) => {
       setCustomer(response.data);
     });
-  }),
-    [setCustomer, customerId];
+  }, [setCustomer, customerId]);
 
   return (
     <div>

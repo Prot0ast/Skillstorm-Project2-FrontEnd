@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "./logo.svg";
 import { ThemeContext } from "./ThemeContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import "./App.css";
+import { CustomerDetails } from "./pages/CustomerDetails";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/customer/:customerId" element={<CustomerDetails />} />
         </Routes>
       </BrowserRouter>
     </ThemeContext.Provider>
