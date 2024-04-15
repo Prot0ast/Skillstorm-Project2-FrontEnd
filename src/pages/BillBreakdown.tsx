@@ -1,8 +1,8 @@
 import React from 'react';
-import { Footer, Header } from "../components";
+import { Footer, Header, PlanTableRow } from "../components";
 import { useParams } from "react-router-dom";
 import { getCustomerPlansById } from '../services/planService';
-import { Customer, Plan } from '../types';
+import { Plan } from '../types';
 
 export function BillBreakdown() {
     const [plan, setPlan] = React.useState(new Array<Plan>);
@@ -26,7 +26,7 @@ export function BillBreakdown() {
             <Header />
                 <h2>Monthly Bill Breakdown</h2>
                 <tbody>
-                    {/* {plan.map((plan)=> (< key={plan.price} plan={plan} />))} */}
+                    {plan.map((plan)=> (<PlanTableRow key={plan.id} plan={plan} />))}
                 </tbody>
             </div>
             <Footer />
