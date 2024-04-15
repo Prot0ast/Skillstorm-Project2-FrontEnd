@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { ThemeContext } from "../ThemeContext";
 import { Footer } from "../components/Footer.component";
 import { Header } from "../components/Header.component";
+import QuantumCom from './public/QuantumCom.png';
 
 export function HomePage() {
   const [count, setCount] = React.useState(0);
@@ -25,7 +26,8 @@ export function HomePage() {
     <>
       <Header />
       <div>
-        <h1>Quantum Com</h1>
+        <img src="QuantumCom.png" alt="QuantumCom logo" />
+        <br />
         <a className="btn-btn-primary btn-lg" href="/customers">View Customers</a>
       </div>
       <Footer />
