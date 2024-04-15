@@ -1,12 +1,12 @@
 import React from "react";
 import { Footer, Header, CustomerTableRow } from "../components";
 import {getAllCustomers } from '../services/customerService';
-import { Customer } from "../types";
+import { Customer, Plan } from "../types";
 
 export function Customers(){
     const [customers, setCustomers] = React.useState(new Array<Customer>);
 
-    let newCustomer = {id: "", fullName: "", email: ""} // TODO: Add Plans once implemented
+    let newCustomer = {id: "", fullName: "", email: "", plans: ["","", "", 0, 0]} // TODO: Add Plans once implemented
 
     React.useEffect(() => {
         getAllCustomers().then(response => {

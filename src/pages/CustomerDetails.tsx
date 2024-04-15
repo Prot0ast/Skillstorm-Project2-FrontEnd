@@ -9,8 +9,6 @@ export function CustomerDetails() {
     id: "",
     fullName: "",
     email: "",
-    plans: ["", ["", "", 0, 0]]
-    // TODO: insert Plans once implemented
   });
 
   const { customerId } = useParams();
@@ -35,11 +33,8 @@ export function CustomerDetails() {
         <dd>{customer.fullName}</dd>
         <dt>Email</dt>
         <dd>{customer.email}</dd>
-        <dt>Plans</dt>
-        <dt>{customer.plans}</dt>
       </dl>
       <Footer />
     </div>
   );
-  //TODO: insert Plans once implemented
 }
