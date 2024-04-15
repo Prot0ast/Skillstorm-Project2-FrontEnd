@@ -11,3 +11,8 @@ export interface Plan{
     price: number
     deviceLimit: number
 }
+
+export interface CustomerPlan{
+    id: string
+    plans: [string]
+}
