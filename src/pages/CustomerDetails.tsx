@@ -2,6 +2,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { getCustomerById } from "../services/customerService";
+import { Footer, Header } from "../components";
 
 export function CustomerDetails() {
   const [customer, setCustomer] = React.useState({
@@ -32,6 +33,7 @@ export function CustomerDetails() {
         <dt>Email</dt>
         <dd>{customer.email}</dd>
       </dl>
+      <Footer />
     </div>
   );
 }

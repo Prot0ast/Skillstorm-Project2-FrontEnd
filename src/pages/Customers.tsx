@@ -32,7 +32,6 @@ export function Customers(){
                 {customers.map((customer) => (<CustomerTableRow key={customer.id} customer={customer} />))}
             </tbody>
             </table>
-
         </div>
         <Footer />
         </>
