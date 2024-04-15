@@ -2,5 +2,5 @@ export interface Customer {
   id: string;
   fullName: string;
   email: string;
-  // TODO: insert Plans
+  plans: [string, [string, string, number, number]];// TODO: insert Plans
 }

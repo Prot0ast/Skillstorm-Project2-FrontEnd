@@ -9,6 +9,7 @@ export function CustomerDetails() {
     id: "",
     fullName: "",
     email: "",
+    plans: ["", ["", "", 0, 0]]
     // TODO: insert Plans once implemented
   });
 
@@ -25,6 +26,7 @@ export function CustomerDetails() {
 
   return (
     <div>
+      <Header />
       <h2>Customer Details</h2>
       <dl>
         <dt>ID</dt>
@@ -34,7 +36,7 @@ export function CustomerDetails() {
         <dt>Email</dt>
         <dd>{customer.email}</dd>
         <dt>Plans</dt>
-        <dt></dt>
+        <dt>{customer.plans}</dt>
       </dl>
       <Footer />
     </div>
