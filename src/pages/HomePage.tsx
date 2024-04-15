@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../ThemeContext";
 import { Footer } from "../components/Footer.component";
 import { Header } from "../components/Header.component";
-import QuantumCom from './public/QuantumCom.png';
+import './Pallete.css';
 
 export function HomePage() {
   const [count, setCount] = React.useState(0);
