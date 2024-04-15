@@ -6,7 +6,7 @@ import { Customer } from "../types";
 export function Customers(){
     const [customers, setCustomers] = React.useState(new Array<Customer>);
 
-    let newCustomer = {id: "", fullName: "", email: ""}
+    let newCustomer = {id: "", fullName: "", email: ""} // TODO: Add Plans once implemented
 
     React.useEffect(() => {
         getAllCustomers().then(response => {
@@ -25,7 +25,7 @@ export function Customers(){
                         <th>ID</th>
                         <th>Full Name</th>
                         <th>Email</th>
-                        <th></th>
+                        <th>Plans</th>
                     </tr>
                 </thead>
             <tbody>
