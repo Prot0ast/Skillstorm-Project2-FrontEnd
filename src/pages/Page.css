@@ -1,0 +1,14 @@
+.centerImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.centerText{
+    text-align: center;
+}
+
+.background{
+    background-color: #0F0F0F;
+}
