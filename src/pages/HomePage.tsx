@@ -30,38 +30,38 @@ export function HomePage() {
     </head>
       <Header />
       <div className="centerText">
-        <div className="background">:)</div>
+        <div className="night night_text">:)</div>
         <a className="btn-btn-primary btn-lg" href="/customers">View Customers</a>
       </div>
       <body>
         <br />
         <h4 className="centerText">New User? Register Here!</h4>
-        <form action="https://localhost:5001/api" method="post">
+        <form action="https://localhost:5001/api" method="post" className="dim_gray">
             <div className="container">
-              <label htmlFor="firstName">First Name:</label>
+              <label htmlFor="firstName" className="white_text">First Name:</label>
               <input type="text" className="form-control" id="firstName" name="firstName" placeholder="Enter First Name here..." required/>
             </div>
             <div className="container">
-              <label htmlFor="lastName">Last Name:</label>
+              <label htmlFor="lastName" className="white_text">Last Name:</label>
               <input type="text" className="form-control" id="lastName" name="lastName" placeholder="Enter Last Name here..." required/>
             </div>
             <div className="container">
-              <label htmlFor="userName">Username: </label>
+              <label htmlFor="userName" className="white_text">Username: </label>
               <input type="text" className="form-control" id="userName" name="userName" placeholder="Enter Username here..." required/>
             </div>
             <div className="container">
-              <label htmlFor="password">Password: </label>
-              <h6>Must be 10 characters long</h6>
+              <label htmlFor="password" className="white_text">Password: </label>
+              <h6 className="white_text">Must be 10 characters long</h6>
               <h6></h6>
               <input type="text" className="form-control" id="password" name="password" placeholder="Enter Password here..." pattern=".{10,}" required/>
             </div>
             <div className="container">
-              <label htmlFor="email">Email: </label>
+              <label htmlFor="email" className="white_text">Email: </label>
               <input type="text" className="form-control" id="email" name="email" placeholder="Enter Email here..." required/>
             </div>
             <div className="container">
-              <label htmlFor="phoneNumber">Phone Number: </label>
-              <h6>Format: ###-###-####</h6>
+              <label htmlFor="phoneNumber" className="white_text">Phone Number: </label>
+              <h6 className="white_text">Format: ###-###-####</h6>
               <input type="tel" className="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number here..." pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
             </div>
             <div className="centerText">
