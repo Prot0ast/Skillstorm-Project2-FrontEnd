@@ -3,6 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { getCustomerById } from "../services/customerService";
 import { Footer, Header } from "../components";
+import './Page.css';
 
 export function CustomerDetails() {
   const [customer, setCustomer] = React.useState({
@@ -25,7 +26,7 @@ export function CustomerDetails() {
   return (
     <div>
       <Header />
-      <h2>Customer Details</h2>
+      <h2 className="centerText">Customer Details</h2>
       <dl>
         <dt>ID</dt>
         <dd>{customer.id}</dd>

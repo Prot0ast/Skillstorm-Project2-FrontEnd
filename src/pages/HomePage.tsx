@@ -30,8 +30,6 @@ export function HomePage() {
     </head>
       <Header />
       <div className="centerText">
-        <img className="centerImg" src="QuantumCom.png" alt="QuantumCom logo" />
-        <br />
         <div className="background">:)</div>
         <a className="btn-btn-primary btn-lg" href="/customers">View Customers</a>
       </div>

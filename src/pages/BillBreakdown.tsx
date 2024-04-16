@@ -3,6 +3,7 @@ import { Footer, Header, PlanTableRow } from "../components";
 import { useParams } from "react-router-dom";
 import { getCustomerPlansById } from '../services/planService';
 import { Plan } from '../types';
+import './Page.css';
 
 export function BillBreakdown() {
     const [plan, setPlan] = React.useState(new Array<Plan>);
@@ -22,7 +23,7 @@ export function BillBreakdown() {
     
     return(
         <>
-            <div>
+            <div className="centerText">
             <Header />
                 <h2>Monthly Bill Breakdown</h2>
                 <tbody>

@@ -2,6 +2,7 @@ import React from "react";
 import { Footer, Header, CustomerTableRow } from "../components";
 import {getAllCustomers } from '../services/customerService';
 import { Customer, Plan } from "../types";
+import './Page.css';
 
 export function Customers(){
     const [customers, setCustomers] = React.useState(new Array<Customer>);
@@ -18,7 +19,7 @@ export function Customers(){
         <>
         <Header />
         <div className = "container">
-            <h2>Customers</h2>
+            <h2 className="centerText">Customers</h2>
             <table className = 'table table-responsive table-striped table-hover'>
                 <thead>
                     <tr>
