@@ -5,6 +5,7 @@ export const http = axios.create({
     baseURL: "https://localhost:5001/api",
     headers: {
       "Content-type": "application/json",
+      "Access-Control-Allow-Origin": "http://localhost:3000/"
     },
   });
 
