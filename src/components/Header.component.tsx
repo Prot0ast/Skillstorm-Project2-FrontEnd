@@ -1,4 +1,5 @@
 import React from "react";
+import './Component.css'
 
 export class Header extends React.Component {
   componentDidMount(): void {
@@ -13,9 +14,10 @@ export class Header extends React.Component {
     return (
       <div>
         <header>
-          <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-            <div>sample text from header</div>
-          </nav>
+            <div>
+            <img className="centerImg" src="QuantumCom.png" alt="QuantumCom logo" />
+            <br />
+            </div>
         </header>
       </div>
     );

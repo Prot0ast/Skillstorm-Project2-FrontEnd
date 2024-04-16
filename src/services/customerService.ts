@@ -8,8 +8,12 @@ export const http = axios.create({
   },
 });
 
-const getCustomerById = async (id: string) => {
-  return await http.get<Customer>("/customer/${id}");
+const getAllCustomers = async () => {
+  return await http.get<Array<Customer>>('/Customer');
 };
 
-export { getCustomerById };
+const getCustomerById = async (id: string) => {
+  return await http.get<Customer>(`/Customer/${id}`);
+};
+
+export { getCustomerById , getAllCustomers};
