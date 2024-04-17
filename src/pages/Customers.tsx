@@ -9,13 +9,17 @@ export function Customers(){
     
     const getJSON = async () => {
         const resp = await fetch("https://localhost:5001/api/Customer");
-        const data = await resp.json();
+        var data = await resp.json();
         setCustomers(data);
     };
     
     useEffect(() => {
         getJSON();
     }, []);
+
+    var j = JSON.stringify(customers);
+    var parsedCustomers = JSON.parse(j);
+    console.log(parsedCustomers[3]);
 
     return (
         <>
@@ -32,7 +36,7 @@ export function Customers(){
                     </tr>
                 </thead>
             <tbody>
-                {JSON.stringify(customers)}
+                
             </tbody>
             </table>
         </div>
