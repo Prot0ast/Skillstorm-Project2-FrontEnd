@@ -15,7 +15,7 @@ function App() {
     <Route path="/" element={<Home />} />
     <Route path="/Device" element={<Devices />}/>
     <Route path="/Device/:deviceId" element={<DeviceDetails/>}/>
-    <Route path="/customerPlan" element={<CustomerPlans/>}/>
+    <Route path="/CustomerPlan" element={<CustomerPlans/>}/>
     </Routes>
     </BrowserRouter>
   </ThemeContext.Provider>

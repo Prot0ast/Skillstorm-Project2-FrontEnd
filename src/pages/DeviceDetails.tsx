@@ -1,39 +1,42 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { getDeviceById } from "../services/deviceService";
 
 export function DeviceDetails(){
-    const[device, setDevice] = React.useState({
-        id: '',
-        custId: '',
-        name: '',
-        number: ''
-    });
-
-    const{deviceId} = useParams();
-
-    React.useEffect(() => {
-        if(!deviceId){
-            return;
+    fetch("https://localhost:5001/api/Device/")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(devices){
+        let placeholder = document.querySelector("#data-output");
+        let out = "";
+        for(let device of devices){
+            out += `
+            <tr>
+                <td>${device.id}</td>
+                <td>${device.custId}</td>
+                <td>${device.name}</td>
+                <td>${device.number}</td>
+                <td><a className = 'btn btn-info' href="/}">Home</a></td>
+            </tr>
+            `;
         }
-        getDeviceById(device.id).then(response =>{
-            setDevice(response.data)
-        });
-    }, [setDevice, deviceId])
-
+        placeholder!.innerHTML = out;
+    })
     return(
-        <div>
-            <h2>Customer Device Details</h2>
-            <dl>
-                <dt>ID</dt>
-                <dd>{device.id}</dd>
-                <dt>Customers ID</dt>
-                <dd>{device.custId}</dd>
-                <dt>Device Name</dt>
-                <dd>{device.name}</dd>
-                <dt>Device Phone Number</dt>
-                <dd>{device.number}</dd>
-            </dl>
-        </div>
+        <div className="container">
+        <h2>Devices</h2>
+        <table className='table table-responsive table-striped table-hover'>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Customer ID</th>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="data-output">
+            </tbody>
+        </table>
+    </div>
     )
 }

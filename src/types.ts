@@ -14,5 +14,5 @@ export interface Plan{
 
 export interface CustomerPlan{
     id: string
-    plans: [string]
+    plans: string[]
 }
