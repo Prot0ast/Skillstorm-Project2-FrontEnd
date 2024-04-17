@@ -27,7 +27,7 @@ export function BillBreakdown() {
             <Header />
                 <h2>Monthly Bill Breakdown</h2>
                 <tbody>
-                    {plan.map((plan)=> (<PlanTableRow key={plan.id} plan={plan} />))}
+                    {/* {plan.map((plan)=> (<PlanTableRow key={plan.id} plan={plan} />))} */}
                 </tbody>
             </div>
             <Footer />
