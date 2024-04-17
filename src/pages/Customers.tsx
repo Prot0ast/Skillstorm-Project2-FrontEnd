@@ -1,19 +1,21 @@
-import React from "react";
+import { useState, useEffect} from "react";
 import { Footer, Header, CustomerTableRow } from "../components";
 import {getAllCustomers } from '../services/customerService';
 import { Customer, Plan } from "../types";
 import './Page.css';
 
 export function Customers(){
-    const [customers, setCustomers] = React.useState(new Array<Customer>);
-
-    let newCustomer = {id: "", fullName: "", email: "", plans: ["","", "", 0, 0]} // TODO: Add Plans once implemented
-
-    React.useEffect(() => {
-        getAllCustomers().then(response => {
-            setCustomers(response.data)
-        });
-    }, [setCustomers]);
+    const [customers, setCustomers] = useState({});
+    
+    const getJSON = async () => {
+        const resp = await fetch("https://localhost:5001/api/Customer");
+        const data = await resp.json();
+        setCustomers(data);
+    };
+    
+    useEffect(() => {
+        getJSON();
+    }, []);
 
     return (
         <>
@@ -30,7 +32,7 @@ export function Customers(){
                     </tr>
                 </thead>
             <tbody>
-                {customers.map((customer) => (<CustomerTableRow key={customer.id} customer={customer} />))}
+                {JSON.stringify(customers)}
             </tbody>
             </table>
         </div>

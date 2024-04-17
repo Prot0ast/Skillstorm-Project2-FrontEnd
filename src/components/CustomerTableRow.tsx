@@ -8,7 +8,7 @@ interface CustomerTableRowProps {
 export function CustomerTableRow({
   customer,
 }: CustomerTableRowProps): JSX.Element {
-  let customerLink = `/customers/${customer.id}`;
+  let customerLink = `/Customers/${customer.id}`;
   return (
     <tr>
       <td>{customer.id}</td>
