@@ -19,6 +19,7 @@ export class Header extends React.Component {
         <header>
             <div>
             <img className="centerImg" src="QuantumCom.png" alt="QuantumCom logo" />
+            <div className="night night_text">:)</div>
             <br />
             </div>
         </header>

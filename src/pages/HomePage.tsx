@@ -30,7 +30,6 @@ export function HomePage() {
     </head>
       <Header />
       <div className="centerText">
-        <div className="night night_text">:)</div>
         <a className="btn-btn-primary btn-lg" href="/Customers">View Customers</a>
       </div>
       <body>
