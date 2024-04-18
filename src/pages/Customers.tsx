@@ -1,25 +1,11 @@
 import { useState, useEffect} from "react";
+import { useParams } from "react-router-dom";
 import { Footer, Header, CustomerTableRow } from "../components";
 import {getAllCustomers } from '../services/customerService';
 import { Customer, Plan } from "../types";
 import './Page.css';
 
 export function Customers(){
-    // const [customers, setCustomers] = useState({});
-    
-    // const getJSON = async () => {
-    //     const resp = await fetch("https://localhost:5001/api/Customer");
-    //     var data = await resp.json();
-    //     setCustomers(data);
-    // };
-    
-    // useEffect(() => {
-    //     getJSON();
-    // }, []);
-
-    // var j = JSON.stringify(customers);
-    // var parsedCustomers = JSON.parse(j);
-
     fetch("https://localhost:5001/api/Customer").then(function(response){
         return response.json();
     }).then(function(customers){
@@ -32,8 +18,7 @@ export function Customers(){
                 <td>${customer.fullName}</td>
                 <td>${customer.email}</td>
                 <td>${customer.plans}</td>
-                <Link to={{pathname: "/Customer/:customerId", state: ${customer.id}}}>
-                <td><a className='btn btn-info' href="/Customer/:customerId">View</a></td>
+                <td><a className='btn btn-info' href="/Customers/CustomerId">View</a></td>
             </tr>
             `;
         }

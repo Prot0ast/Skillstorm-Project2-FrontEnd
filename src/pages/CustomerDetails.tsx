@@ -6,22 +6,27 @@ import { Footer, Header } from "../components";
 import './Page.css';
 
 export function CustomerDetails() {
-  const [customer, setCustomer] = useState({
-    id: "",
-    fullName: "",
-    email: "",
-  });
-
-  const { customerId } = useParams();
-
-  useEffect(() => {
-    if (!customerId) {
-      return;
+  fetch("https://localhost:5001/api/Customer/${customerId}") // <- how to pass customer id???
+  .then(function(response){
+    return response.json();
+  }).then(function(customer){
+    let placeholder = document.querySelector("#data-output");
+    let out = "";
+    for(let c of customer){
+      out += `
+      <tr>
+        <td>${c.id}</td>
+        <td>${c.fullName}</td>
+        <td>${c.email}</td>
+        <td>${c.plans}</td>
+        <td>${c.cardType}</td>
+        <td>${c.devices}</td>
+        <td>${c.fullName}</td>
+      </tr>
+      `;
     }
-    getCustomerById(customerId).then((response) => {
-      setCustomer(response.data);
-    });
-  }, [setCustomer, customerId]);
+    placeholder!.innerHTML = out;
+  })
 
   return (
     <>
@@ -32,6 +37,7 @@ export function CustomerDetails() {
       <Header />
       <h2 className="centerText">Customer Details</h2>
       <a className="btn-btn-primary btn-lg" href="/">Home</a>
+      <a className='btn btn-info' href="/Customer/$:bill"></a>
       <table className = 'table table-responsive table-striped table-hover'>
         <thead>
           <tr>
@@ -41,10 +47,8 @@ export function CustomerDetails() {
             <th>Plans</th>
           </tr>
         </thead>
-            {/* <tbody id="data-output">
-                
-            </tbody> */}
-            </table>
+            <tbody id="data-output"></tbody>
+      </table>
       <Footer />
     </div>
     </>
