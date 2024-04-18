@@ -30,13 +30,12 @@ export function HomePage() {
     </head>
       <Header />
       <div className="centerText">
-        <div className="night night_text">:)</div>
-        <a className="btn-btn-primary btn-lg" href="/customers">View Customers</a>
+        <a className="btn-btn-primary btn-lg" href="/Customers">View Customers</a>
       </div>
       <body>
         <br />
         <h4 className="centerText">New User? Register Here!</h4>
-        <form action="https://localhost:5001/api" method="post" className="dim_gray">
+        <form action="https://localhost:5001/api/Customer/" method="post" className="dim_gray" encType="application/json">
             <div className="container">
               <label htmlFor="firstName" className="white_text">First Name:</label>
               <input type="text" className="form-control" id="firstName" name="firstName" placeholder="Enter First Name here..." required/>

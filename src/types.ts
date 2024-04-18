@@ -22,5 +22,5 @@ export interface Customer {
   id: string;
   fullName: string;
   email: string;
-  plans: Plan;
+  plans: Plan[];
 }
