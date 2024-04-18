@@ -1,5 +1,6 @@
 import React from "react";
 import './Component.css'
+import './QuantumCom.png'
 
 export class Header extends React.Component {
   componentDidMount(): void {

@@ -32,7 +32,8 @@ export function Customers(){
                 <td>${customer.fullName}</td>
                 <td>${customer.email}</td>
                 <td>${customer.plans}</td>
-                <td><a className='btn btn-info' href="https://localhost:5001/api/Customer/${customer.id}">View</a></td>
+                <Link to={{pathname: "/Customer/:customerId", state: ${customer.id}}}>
+                <td><a className='btn btn-info' href="/Customer/:customerId">View</a></td>
             </tr>
             `;
         }
